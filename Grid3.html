@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    "header header header header"
+    "smallbox smallbox smallbox sidebar"
+    "maincontent maincontent maincontent sidebar"
+    "footer footer footer footer";
+  grid-template-columns: repeat(3, 1fr) 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: orange;
+  text-align: center;
+  padding: 10px;
+}
+
+.smallbox {
+  background-color: orange;
+  text-align: center;
+  padding: 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: orange;
+  text-align: center;
+  padding: 10px;
+}
+
+.maincontent {
+  grid-area: maincontent;
+  background-color: orange;
+  text-align: center;
+  padding: 10px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: orange;
+  text-align: center;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>Header</header>
+  <div class="smallbox">Small box</div>
+  <div class="smallbox">Small box</div>
+  <div class="smallbox">Small box</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="maincontent">Main content</div>
+  <footer>Footer</footer>
+</div>
+
+</body>
+</html>
