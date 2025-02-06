@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payslip Calculator</title>
+    <script>
+        function calculatePayslip() {
+            // Constants
+            const basicSalary = 37900;
+            const workingDays = 30;
+
+            // Get input values
+            let presentDays = document.getElementById('presentDays').value;
+
+            // Validate present days
+            if (isNaN(presentDays) || presentDays < 0 || presentDays > workingDays) {
+                alert('Please enter a valid number of present days (between 0 and 30).');
+                return;
+            }
+
+            // Calculate actual salary based on days present
+            const actualSalary = (basicSalary / workingDays) * presentDays;
+
+            // Calculate DNS (9% of Basic Salary)
+            const dns = 0.09 * basicSalary;
+
+            // HRA calculations
+            const hraHostel = 0.3 * basicSalary; // 30% for hostel
+            const hraRoom = 0.2 * basicSalary; // 20% for room
+            const hraHome = 0; // 0% for home
+
+            // Calculate total salary
+            const totalSalary = actualSalary + hraHostel + hraRoom - dns;
+
+            // Display the result
+            document.getElementById('result').innerHTML = `
+                <h3>Payslip Details</h3>
+                <p><strong>Basic Salary:</strong> ₹${basicSalary}</p>
+                <p><strong>Days Present:</strong> ${presentDays} / ${workingDays}</p>
+                <p><strong>Calculated Salary (for days present):</strong> ₹${actualSalary.toFixed(2)}</p>
+                <p><strong>DNS (9% of Basic):</strong> ₹${dns.toFixed(2)}</p>
+                <p><strong>HRA (Hostel - 30%):</strong> ₹${hraHostel.toFixed(2)}</p>
+                <p><strong>HRA (Room - 20%):</strong> ₹${hraRoom.toFixed(2)}</p>
+                <p><strong>Total Salary:</strong> ₹${totalSalary.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Employee Payslip Calculator</h2>
+
+    <form id="payslipForm" onsubmit="event.preventDefault(); calculatePayslip();">
+        <label for="presentDays">Number of Days Present:</label>
+        <input type="number" id="presentDays" name="presentDays" min="0" max="30" required>
+        <br><br>
+        <input type="submit" value="Calculate Payslip">
+    </form>
+
+    <div id="result"></div>
+
+</body>
+</html>

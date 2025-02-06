@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Iframes with Backgrounds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .iframe-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+        .iframe-wrapper {
+            width: 9%; /* Make each iframe smaller so 10 fit in a row */
+            margin: 1%;
+            height: 200px; /* Fixed height for iframe */
+            background-color: lightblue;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .iframe-wrapper:nth-child(odd) {
+            background-image: url('https://via.placeholder.com/300x200?text=Odd+Frame');
+            background-size: cover;
+            background-position: center;
+        }
+        .iframe-wrapper:nth-child(even) {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="iframe-container">
+        <!-- Create 10 rows, each containing 10 iframes -->
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.example.com"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>

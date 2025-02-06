@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        caption { font-weight: bold; margin-bottom: 5px; font-size: 20px; }
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption><b>1. Simple Table</b></caption>
+        <tr><th>Name</th><th>Age</th></tr>
+        <tr><td>Raj</td><td>25</td></tr>
+        <tr><td>Priya</td><td>30</td></tr>
+    </table>
+
+    <table>
+        <caption><b>2. Table with Colspan</b></caption>
+        <tr><th colspan="2">Full Name</th></tr>
+        <tr><td>Arjun Kumar</td><td>Neha Sharma</td></tr>
+    </table>
+
+    <table>
+        <caption><b>3. Table with Rowspan</b></caption>
+        <tr><th>Name</th><th>Details</th></tr>
+        <tr><td rowspan="2">Meera</td><td>Age: 25</td></tr>
+        <tr><td>City: Mumbai</td></tr>
+    </table>
+
+    <table style="border: 2px solid red;">
+        <caption><b>4. Styled Table</b></caption>
+        <tr><th>ID</th><th>Product</th></tr>
+        <tr><td>1</td><td>Laptop</td></tr>
+        <tr><td>2</td><td>Mobile</td></tr>
+    </table>
+
+    <table>
+        <caption><b>5. Nested Table</b></caption>
+        <tr><th>Outer</th><th>Inner Table</th></tr>
+        <tr>
+            <td>Item 1</td>
+            <td>
+                <table>
+                    <tr><td>Nested 1</td></tr>
+                    <tr><td>Nested 2</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
